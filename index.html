@@ -447,6 +447,55 @@
     .product { padding: 50px 20px; }
     .section-divider { padding: 60px 20px; }
   }
+
+  /* PRINT / PDF */
+  @page { size: A4; margin: 0; }
+
+  @media print {
+    html, body { background: var(--bg); }
+    .scroll-hint { display: none !important; }
+
+    .cover,
+    .manifesto,
+    .section-divider,
+    .product,
+    .closing,
+    footer {
+      page-break-after: always;
+      break-after: page;
+      page-break-inside: avoid;
+      break-inside: avoid;
+      min-height: 100vh;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 40px;
+      border-bottom: none !important;
+    }
+
+    .cover { justify-content: space-between; }
+    .cover-inner { flex: 0 1 auto; }
+
+    .product {
+      padding: 28px 40px;
+      justify-content: flex-start;
+    }
+
+    .product-header { margin-top: 0; padding-top: 18px; }
+    .product-image-wrap { margin: 18px auto 22px; width: 240px; }
+    .product-desc { padding: 18px 0 14px; }
+    .effect-box { padding-top: 14px; }
+    .effect-title { margin-bottom: 10px; }
+    .effect-list { line-height: 1.8; }
+    .where-box { padding-top: 16px; margin-top: 16px; }
+    .where-title { margin-bottom: 14px; }
+    .shop-btn { padding: 12px 0; width: 110px; }
+
+    footer { page-break-after: auto; break-after: auto; }
+    .closing { min-height: auto; padding: 60px 40px; }
+  }
 </style>
 </head>
 <body>
